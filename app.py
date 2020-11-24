@@ -9,6 +9,9 @@ class Cursos:
         self.duracao = duracao
         self.unidade = unidade
 
+@app.route("/")
+def start():
+    return "inicio"
 
 @app.route("/home")
 def main():
@@ -20,4 +23,4 @@ def main():
     return render_template("index.html", titulo="Cursos", Cursos=lista_cursos)
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    app.run(port=5000, host='0.0.0.0')
